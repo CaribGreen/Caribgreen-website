@@ -58,6 +58,10 @@
             margin-bottom: 1rem;
         }
 
+        .logo-container a {
+            cursor: pointer;
+        }
+
         .caribgreen-text {
             font-family: 'Allura', cursive;
             font-size: 5rem;
@@ -242,13 +246,6 @@
             transform: translateY(-10px);
         }
 
-        .product-icon {
-            background: linear-gradient(135deg, var(--green-light), var(--green-dark));
-            padding: 2rem;
-            text-align: center;
-            font-size: 4rem;
-        }
-
         .product-content {
             padding: 2.5rem;
         }
@@ -425,11 +422,13 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
     <header>
         <div class="logo-container">
-            <div class="caribgreen-text">CaribGreen</div>
-            <div class="seasons-text">Seasons</div>
+            <a href="#top" style="text-decoration: none;">
+                <div class="caribgreen-text">CaribGreen</div>
+                <div class="seasons-text">Seasons</div>
+            </a>
         </div>
         
         <div class="tagline">Authentic Caribbean Seasonings</div>
@@ -439,6 +438,7 @@
     <nav>
         <a href="#about">About</a>
         <a href="#products">Our Seasonings</a>
+        <a href="#edens">Eden's Essence</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -449,12 +449,12 @@
             <p>
                 Welcome to CaribGreen Seasons, where we bring you the authentic taste of the Caribbean 
                 through our freshly blended seasonings. Each blend is crafted with natural herbs and 
-                traditional Caribbean spices, honoring island heritage and delivering bold, genuine flavors 
+                traditional Caribbean spices, honoring island heritage and delivering bold, genuine flavours 
                 to your kitchen.
             </p>
             <p style="margin-top: 1.5rem;">
                 From traditional family recipes to your table, our seasonings capture the essence of 
-                Caribbean cooking - fresh, flavorful, and made with love.
+                Caribbean cooking - fresh, flavourful, and made with love.
             </p>
         </div>
     </section>
@@ -468,13 +468,13 @@
 
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-icon">🌿</div>
+                <img src="green-seasoning-jar.png" alt="Green Seasoning Jar" style="width: 100%; height: auto; display: block;">
                 <div class="product-content">
                     <h3>Green Seasoning</h3>
                     <p class="product-subtitle">Fresh blend of herbs & spices</p>
                     <p>
                         Our signature Green Seasoning is a vibrant blend of fresh herbs and aromatics 
-                        that brings authentic Caribbean flavor to any dish. Perfect for marinating meats, 
+                        that brings authentic Caribbean flavour to any dish. Perfect for marinating meats, 
                         seasoning vegetables, and adding that essential island touch to your cooking.
                     </p>
                     <ul class="product-features">
@@ -487,23 +487,44 @@
             </div>
 
             <div class="product-card">
-                <div class="product-icon">🌶️</div>
+                <img src="jerk-seasoning-jar.png" alt="Jerk Seasoning Jar" style="width: 100%; height: auto; display: block;">
                 <div class="product-content">
                     <h3>Jerk Seasoning</h3>
                     <p class="product-subtitle">Traditional Caribbean spice mix</p>
                     <p>
                         Experience the bold, authentic taste of Caribbean jerk with our traditional 
-                        spice blend. Perfectly balanced heat and flavor make this ideal for jerk chicken, 
+                        spice blend. Perfectly balanced heat and flavour make this ideal for jerk chicken, 
                         pork, fish, or any dish that needs that signature island kick.
                     </p>
                     <ul class="product-features">
-                        <li>Authentic jerk flavor</li>
+                        <li>Authentic jerk flavour</li>
                         <li>Perfect heat balance</li>
                         <li>Traditional spices</li>
                         <li>Island-approved taste</li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="edens">
+        <h2>Eden's Essence</h2>
+        
+        <div class="about-intro">
+            <p>
+                Eden's Essence is our sister brand, bringing you the rich, comforting flavours 
+                of Jamaica. Each dish is freshly prepared with traditional recipes and island love, 
+                perfect for family meals and special gatherings.
+            </p>
+            <p style="margin-top: 1.5rem;">
+                A taste of Jamaica, made with love.
+            </p>
+        </div>
+
+        <div class="products-intro" style="color: var(--dark-brown); margin-top: 3rem;">
+            <strong>Coming Soon:</strong> Authentic Jamaican treats including Jamaican Fruit Cake, 
+            Fried Fish with Festival or Bammy, Jamaican Patties, Bun & Cheese, Coconut Grater Cake, 
+            and Freshly Squeezed Juices.
         </div>
     </section>
 
@@ -517,7 +538,7 @@
                 
                 <div class="contact-item">
                     <span class="contact-icon">✉</span>
-                    <a href="mailto:orders@caribgreenseasons.com">orders@caribgreenseasons.com</a>
+                    <a href="/cdn-cgi/l/email-protection#69061b0d0c1b1a290a081b000b0e1b0c0c071a0c081a06071a470a0604"><span class="__cf_email__" data-cfemail="ea85988e8f9899aa898b9883888d988f8f84998f8b99858499c4898587">[email&#160;protected]</span></a>
                 </div>
                 
                 <div class="contact-item">
@@ -538,7 +559,4 @@
         <p style="font-style: italic; margin-top: 1rem;">
             "Taste the Caribbean, Naturally."
         </p>
-        <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
-            A family brand proudly registered in Canada
-        </p>
-        <p style="fon
+        <
