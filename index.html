@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaribGreen Seasons - Authentic Caribbean Seasonings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors from Logo */
+            --green-light: #a4b85c;
+            --green-dark: #8b9d3b;
+            --wood-dark: #5c3d28;
+            --wood-medium: #7a5c42;
+            --wood-light: #a08060;
+            --cream: #f5ead3;
+            --dark-brown: #4a3428;
+            --gold-accent: #d4a537;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: var(--cream);
+            color: var(--dark-brown);
+        }
+
+        /* Header with Wood Background - matching logo exactly */
+        header {
+            background: 
+                linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+                repeating-linear-gradient(90deg, 
+                    var(--wood-dark) 0px, 
+                    var(--wood-medium) 4px, 
+                    var(--wood-light) 8px,
+                    var(--wood-medium) 12px,
+                    var(--wood-dark) 16px
+                );
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid var(--green-dark);
+        }
+
+
+
+        /* Logo - CaribGreen with green gradient and underline */
+        .logo-container {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1rem;
+        }
+
+        .caribgreen-text {
+            font-family: 'Allura', cursive;
+            font-size: 5rem;
+            background: linear-gradient(180deg, var(--green-light) 0%, var(--green-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Green underline under CaribGreen */
+        .caribgreen-text::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--green-light), var(--green-dark));
+            border-radius: 3px;
+        }
+
+        .seasons-text {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: var(--cream);
+            font-style: italic;
+            font-weight: 700;
+            margin-top: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            color: var(--dark-brown);
+            background: var(--cream);
+            padding: 0.5rem 2rem;
+            display: inline-block;
+            margin-top: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .sub-tagline {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            color: var(--cream);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--green-dark);
+            padding: 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--cream);
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            background: var(--green-light);
+            color: var(--dark-brown);
+            border-bottom-color: var(--dark-brown);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--green-dark);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green-light), var(--green-dark));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--dark-brown);
+        }
+
+        /* Products Section - Wood Background */
+        #products {
+            background: 
+                linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+                repeating-linear-gradient(0deg, 
+                    var(--wood-dark) 0px, 
+                    var(--wood-medium) 4px, 
+                    var(--wood-light) 8px,
+                    var(--wood-medium) 12px,
+                    var(--wood-dark) 16px
+                );
+            padding: 5rem 2rem;
+        }
+
+        #products h2 {
+            color: var(--cream);
+        }
+
+        #products h2::after {
+            background: linear-gradient(90deg, var(--green-light), var(--green-dark));
+        }
+
+        .products-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--cream);
+            font-style: italic;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--cream);
+            border: 5px solid var(--green-dark);
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--green-light);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-icon {
+            background: linear-gradient(135deg, var(--green-light), var(--green-dark));
+            padding: 2rem;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 2.5rem;
+        }
+
+        .product-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .product-subtitle {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            color: var(--dark-brown);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .product-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-brown);
+            text-align: center;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding: 0;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            font-size: 1.05rem;
+            text-align: center;
+            color: var(--dark-brown);
+        }
+
+        .product-features li::before {
+            content: '✦ ';
+            color: var(--green-dark);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--cream);
+        }
+
+        .contact-card {
+            max-width: 700px;
+            margin: 3rem auto;
+            background: #fff;
+            padding: 0;
+            border: 5px solid var(--green-dark);
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 2px solid var(--green-light);
+            opacity: 0.5;
+        }
+
+        .contact-content {
+            padding: 3rem 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--green-dark);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .contact-title {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            text-align: center;
+            color: var(--dark-brown);
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--dark-brown);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--green-dark);
+        }
+
+        .contact-icon {
+            color: var(--green-dark);
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: 
+                linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+                repeating-linear-gradient(0deg, 
+                    var(--wood-dark) 0px, 
+                    var(--wood-medium) 4px, 
+                    var(--wood-light) 8px,
+                    var(--wood-medium) 12px,
+                    var(--wood-dark) 16px
+                );
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 4px solid var(--green-dark);
+        }
+
+        footer p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .footer-brand {
+            font-family: 'Allura', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(180deg, var(--green-light), var(--green-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .caribgreen-text {
+                font-size: 3.5rem;
+            }
+
+            .seasons-text {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            nav a {
+                display: block;
+                border-bottom: 1px solid rgba(164, 184, 92, 0.3);
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="caribgreen-text">CaribGreen</div>
+            <div class="seasons-text">Seasons</div>
+        </div>
+        
+        <div class="tagline">Authentic Caribbean Seasonings</div>
+        <div class="sub-tagline">Taste the Caribbean, Naturally.</div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#products">Our Seasonings</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About CaribGreen Seasons</h2>
+        
+        <div class="about-intro">
+            <p>
+                Welcome to CaribGreen Seasons, where we bring you the authentic taste of the Caribbean 
+                through our freshly blended seasonings. Each blend is crafted with natural herbs and 
+                traditional Caribbean spices, honoring island heritage and delivering bold, genuine flavors 
+                to your kitchen.
+            </p>
+            <p style="margin-top: 1.5rem;">
+                From traditional family recipes to your table, our seasonings capture the essence of 
+                Caribbean cooking - fresh, flavorful, and made with love.
+            </p>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Our Seasonings</h2>
+        
+        <p class="products-intro">
+            Freshly blended with natural herbs and traditional Caribbean spices
+        </p>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🌿</div>
+                <div class="product-content">
+                    <h3>Green Seasoning</h3>
+                    <p class="product-subtitle">Fresh blend of herbs & spices</p>
+                    <p>
+                        Our signature Green Seasoning is a vibrant blend of fresh herbs and aromatics 
+                        that brings authentic Caribbean flavor to any dish. Perfect for marinating meats, 
+                        seasoning vegetables, and adding that essential island touch to your cooking.
+                    </p>
+                    <ul class="product-features">
+                        <li>All-natural ingredients</li>
+                        <li>Traditional Caribbean recipe</li>
+                        <li>Versatile for all dishes</li>
+                        <li>Freshly blended</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🌶️</div>
+                <div class="product-content">
+                    <h3>Jerk Seasoning</h3>
+                    <p class="product-subtitle">Traditional Caribbean spice mix</p>
+                    <p>
+                        Experience the bold, authentic taste of Caribbean jerk with our traditional 
+                        spice blend. Perfectly balanced heat and flavor make this ideal for jerk chicken, 
+                        pork, fish, or any dish that needs that signature island kick.
+                    </p>
+                    <ul class="product-features">
+                        <li>Authentic jerk flavor</li>
+                        <li>Perfect heat balance</li>
+                        <li>Traditional spices</li>
+                        <li>Island-approved taste</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        
+        <div class="contact-card">
+            <div class="contact-content">
+                <h3>Get In Touch</h3>
+                <p class="contact-title">We'd love to hear from you</p>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <a href="mailto:orders@caribgreenseasons.com">orders@caribgreenseasons.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">☎</span>
+                    <a href="tel:647-279-1349">647-279-1349</a>
+                </div>
+                
+                <div class="contact-item" style="margin-top: 2.5rem;">
+                    <span class="contact-icon">📍</span>
+                    <span>Proudly serving our community</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-brand">CaribGreen Seasons</p>
+        <p style="font-style: italic; margin-top: 1rem;">
+            "Taste the Caribbean, Naturally."
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">
+            A family brand proudly registered in Canada
+        </p>
+        <p style="fon
